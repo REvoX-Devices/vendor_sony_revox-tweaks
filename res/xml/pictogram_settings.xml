@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:title="@string/revox_pictogram_title">
+
+    <com.android.settingslib.widget.TopIntroPreference
+        android:key="pictogram_intro"
+        android:title="@string/pictogram_intro"/>
+
+    <PreferenceCategory>
+        <SwitchPreferenceCompat
+            android:key="pictogram_4g_for_lte"
+            android:title="@string/pictogram_4g_for_lte_title"
+            android:summary="@string/pictogram_4g_for_lte_summary"
+            android:persistent="false"
+            android:iconSpaceReserved="false"/>
+
+        <SwitchPreferenceCompat
+            android:key="pictogram_4g_for_3g"
+            android:title="@string/pictogram_4g_for_3g_title"
+            android:summary="@string/pictogram_4g_for_3g_summary"
+            android:persistent="false"
+            android:iconSpaceReserved="false"/>
+
+        <SwitchPreferenceCompat
+            android:key="pictogram_hide_lte_plus"
+            android:title="@string/pictogram_hide_lte_plus_title"
+            android:summary="@string/pictogram_hide_lte_plus_summary"
+            android:persistent="false"
+            android:iconSpaceReserved="false"/>
+
+        <ListPreference
+            android:key="pictogram_5g_style"
+            android:title="@string/pictogram_5g_title"
+            android:entries="@array/pictogram_5g_entries"
+            android:entryValues="@array/pictogram_5g_values"
+            android:dialogTitle="@string/pictogram_5g_title"
+            android:persistent="false"
+            app:useSimpleSummaryProvider="true"
+            android:iconSpaceReserved="false"/>
+    </PreferenceCategory>
+</PreferenceScreen>

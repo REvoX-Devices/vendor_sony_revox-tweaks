@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="revox_title">REvoX 設定</string>
+    <string name="revox_summary">カメラ、ピクト表示</string>
+    <string name="revox_camera_title">カメラ</string>
+    <string name="revox_camera_summary">カメラボタン</string>
+    <string name="revox_pictogram_title">ピクト表示</string>
+    <string name="revox_pictogram_summary">モバイル通信の種別表示</string>
+    <string name="pictogram_intro">ステータスバーに出るモバイル通信の種別の表示を変えます。実際の通信方式は変わりません。</string>
+    <string name="pictogram_4g_for_lte_title">LTE を 4G と表示</string>
+    <string name="pictogram_4g_for_lte_summary">LTE 接続を 4G と表示します</string>
+    <string name="pictogram_4g_for_3g_title">3G を 4G と表示</string>
+    <string name="pictogram_4g_for_3g_summary">HSPA+ 接続を 4G と表示します</string>
+    <string name="pictogram_hide_lte_plus_title">LTE+ を LTE と表示</string>
+    <string name="pictogram_hide_lte_plus_summary">キャリアアグリゲーション時の「+」を表示しません</string>
+    <string name="pictogram_5g_title">5G の表示</string>
+    <string name="pictogram_5g_default">5G (標準)</string>
+    <string name="pictogram_5g_mmwave">ミリ波のみ 5G+</string>
+    <string name="pictogram_5g_all_plus">すべて 5G+</string>
+    <string name="camera_key_title">カメラボタン</string>
+    <string name="camera_key_summary">カメラボタンで起動するアプリを選択</string>
+    <string name="camera_key_intro">カメラアプリの起動中はボタンをアプリに渡し、シャッターとして使えます。</string>
+    <string name="camera_key_action_title">カメラボタンの動作</string>
+    <string name="camera_key_off">オフ</string>
+    <string name="camera_key_camera">オン (カメラ)</string>
+    <string name="camera_key_photopro">オン (Photo Pro)</string>
+</resources>

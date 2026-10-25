@@ -1,0 +1,22 @@
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+soong_namespace {
+}
+
+android_app {
+    name: "RevoxTweaks",
+    certificate: "platform",
+    srcs: [
+        "src/**/*.java",
+        "src/**/*.kt",
+    ],
+    platform_apis: true,
+    privileged: true,
+    system_ext_specific: true,
+    static_libs: [
+        "androidx.core_core",
+        "SettingsLib",
+    ],
+}

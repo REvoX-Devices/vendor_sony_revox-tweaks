@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:title="@string/revox_title">
+
+    <Preference
+        android:key="revox_camera"
+        android:title="@string/revox_camera_title"
+        android:summary="@string/revox_camera_summary"
+        android:fragment="com.xperia.settings.camera.CameraKeySettingsFragment"
+        android:persistent="false"
+        android:iconSpaceReserved="false"/>
+
+    <Preference
+        android:key="revox_pictogram"
+        android:title="@string/revox_pictogram_title"
+        android:summary="@string/revox_pictogram_summary"
+        android:fragment="com.xperia.settings.camera.PictogramSettingsFragment"
+        android:persistent="false"
+        android:iconSpaceReserved="false"/>
+</PreferenceScreen>

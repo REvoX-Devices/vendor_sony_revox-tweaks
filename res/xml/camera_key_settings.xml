@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:title="@string/camera_key_title">
+
+    <com.android.settingslib.widget.TopIntroPreference
+        android:key="camera_key_intro"
+        android:title="@string/camera_key_intro"/>
+
+    <PreferenceCategory>
+        <ListPreference
+            android:key="camera_key_action"
+            android:title="@string/camera_key_action_title"
+            android:entries="@array/camera_key_entries"
+            android:entryValues="@array/camera_key_values"
+            android:dialogTitle="@string/camera_key_action_title"
+            android:persistent="false"
+            app:useSimpleSummaryProvider="true"
+            android:iconSpaceReserved="false"/>
+    </PreferenceCategory>
+</PreferenceScreen>

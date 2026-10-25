@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="camera_key_entries">
+        <item>@string/camera_key_off</item>
+        <item>@string/camera_key_camera</item>
+        <item>@string/camera_key_photopro</item>
+    </string-array>
+    <!-- 0 = off, 1 = camera, 2 = Photo Pro -->
+    <string-array name="camera_key_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+    <string-array name="pictogram_5g_entries">
+        <item>@string/pictogram_5g_default</item>
+        <item>@string/pictogram_5g_mmwave</item>
+        <item>@string/pictogram_5g_all_plus</item>
+    </string-array>
+    <!-- 0 = carrier default (5G), 1 = mmWave as 5G+, 2 = all 5G+ -->
+    <string-array name="pictogram_5g_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+</resources>

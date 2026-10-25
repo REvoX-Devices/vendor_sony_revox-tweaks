@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">REvoX Settings</string>
+    <string name="revox_title">REvoX Settings</string>
+    <string name="revox_summary">Camera, status bar icons</string>
+    <string name="revox_camera_title">Camera</string>
+    <string name="revox_camera_summary">Camera key</string>
+    <string name="revox_pictogram_title">Status bar icons</string>
+    <string name="revox_pictogram_summary">Mobile network type labels</string>
+    <string name="pictogram_intro">Changes how the mobile network type is labelled in the status bar. The actual connection is not changed.</string>
+    <string name="pictogram_4g_for_lte_title">Show 4G instead of LTE</string>
+    <string name="pictogram_4g_for_lte_summary">Label LTE connections as 4G</string>
+    <string name="pictogram_4g_for_3g_title">Show 4G instead of 3G</string>
+    <string name="pictogram_4g_for_3g_summary">Label HSPA+ connections as 4G</string>
+    <string name="pictogram_hide_lte_plus_title">Show LTE instead of LTE+</string>
+    <string name="pictogram_hide_lte_plus_summary">Hide the plus sign when carrier aggregation is used</string>
+    <string name="pictogram_5g_title">5G label</string>
+    <string name="pictogram_5g_default">5G (default)</string>
+    <string name="pictogram_5g_mmwave">5G+ for mmWave</string>
+    <string name="pictogram_5g_all_plus">5G+ for all 5G</string>
+    <string name="camera_key_title">Camera key</string>
+    <string name="camera_key_summary">Choose what the camera key launches</string>
+    <string name="camera_key_intro">While a camera app is in the foreground the key is passed to it and works as the shutter button.</string>
+    <string name="camera_key_action_title">Camera key action</string>
+    <string name="camera_key_off">Off</string>
+    <string name="camera_key_camera">Launch Camera</string>
+    <string name="camera_key_photopro">Launch Photo Pro</string>
+</resources>
