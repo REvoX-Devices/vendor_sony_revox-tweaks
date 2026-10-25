@@ -4,7 +4,7 @@
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.xperia.settings.camera"
+          package="net.simplyrin.revoxtweaks"
           android:versionCode="1"
           android:versionName="1.0"
           android:sharedUserId="android.uid.system">
@@ -48,7 +48,12 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.category"
-                       android:value="com.android.settings.category.ia.system" />
+                       android:value="com.android.settings.category.ia.homepage" />
+            <!-- Same group as "The Evolver" (order -160), placed right below it -->
+            <meta-data android:name="com.android.settings.group_key"
+                       android:value="top_level_evolution_category" />
+            <meta-data android:name="com.android.settings.order"
+                       android:value="-150" />
             <meta-data android:name="com.android.settings.icon"
                        android:resource="@drawable/ic_revox" />
             <meta-data android:name="com.android.settings.summary"

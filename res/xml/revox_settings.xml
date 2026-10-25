@@ -8,7 +8,7 @@
         android:key="revox_camera"
         android:title="@string/revox_camera_title"
         android:summary="@string/revox_camera_summary"
-        android:fragment="com.xperia.settings.camera.CameraKeySettingsFragment"
+        android:fragment="net.simplyrin.revoxtweaks.CameraKeySettingsFragment"
         android:persistent="false"
         android:iconSpaceReserved="false"/>
 
@@ -16,7 +16,7 @@
         android:key="revox_pictogram"
         android:title="@string/revox_pictogram_title"
         android:summary="@string/revox_pictogram_summary"
-        android:fragment="com.xperia.settings.camera.PictogramSettingsFragment"
+        android:fragment="net.simplyrin.revoxtweaks.PictogramSettingsFragment"
         android:persistent="false"
         android:iconSpaceReserved="false"/>
 </PreferenceScreen>
