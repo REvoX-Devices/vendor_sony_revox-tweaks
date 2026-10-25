@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Material "tune" (Apache 2.0) -->
+<!-- Material "tune" (Apache 2.0). Settings draws the circle background and tint
+     from the icon_color_scheme meta-data. -->
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="24dp"
     android:height="24dp"

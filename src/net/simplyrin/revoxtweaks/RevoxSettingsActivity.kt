@@ -5,6 +5,7 @@ package net.simplyrin.revoxtweaks
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity
@@ -28,7 +29,11 @@ class RevoxSettingsActivity : CollapsingToolbarBaseActivity(),
         val fragment: Fragment = supportFragmentManager.fragmentFactory
             .instantiate(classLoader, pref.fragment ?: return false)
         fragment.arguments = pref.extras
+        // Animator based transitions with reordering allowed are what lets the predictive back
+        // gesture preview the pop of this back stack entry
         supportFragmentManager.beginTransaction()
+            .setReorderingAllowed(true)
+            .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
             .replace(com.android.settingslib.collapsingtoolbar.R.id.content_frame, fragment)
             .addToBackStack(null)
             .commit()
