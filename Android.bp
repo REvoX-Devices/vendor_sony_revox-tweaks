@@ -13,6 +13,10 @@ android_app {
         "src/**/*.kt",
     ],
     platform_apis: true,
+    // Fragments are instantiated by class name from the preference XML
+    optimize: {
+        enabled: false,
+    },
     privileged: true,
     system_ext_specific: true,
     static_libs: [
