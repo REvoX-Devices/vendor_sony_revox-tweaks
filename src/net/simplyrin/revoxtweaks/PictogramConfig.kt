@@ -55,11 +55,18 @@ object PictogramConfig {
         val subs = context.getSystemService(SubscriptionManager::class.java)
             ?.activeSubscriptionInfoList ?: return
         val manager = context.getSystemService(CarrierConfigManager::class.java) ?: return
+        val prefs = context.getSharedPreferences("pictogram_applied", Context.MODE_PRIVATE)
+        val fingerprint = overrides.toString()
         for (info in subs) {
+            // overrideConfig() broadcasts CARRIER_CONFIG_CHANGED, which updates the subscriptions
+            // and calls us again; only write when the overrides differ from the last ones applied.
+            val key = info.subscriptionId.toString()
+            if (prefs.getString(key, null) == fingerprint) continue
             try {
                 // null clears our previous overrides; this app is the only user of them
                 manager.overrideConfig(info.subscriptionId,
                     if (overrides.isEmpty) null else overrides, true)
+                prefs.edit().putString(key, fingerprint).apply()
             } catch (e: Exception) {
                 Log.e(TAG, "overrideConfig failed for ${info.subscriptionId}", e)
             }
