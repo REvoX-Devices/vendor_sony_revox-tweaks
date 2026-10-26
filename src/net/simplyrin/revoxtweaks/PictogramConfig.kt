@@ -77,6 +77,7 @@ object PictogramConfig {
     const val KEY_ICONS = "revox_pictogram_icons"
     const val SYSTEMUI = "com.android.systemui"
     val ICON_SLOTS = listOf("3g", "3g+", "4g", "4g+", "lte", "lte+", "5g", "5g+")
+    val SIGNAL_SLOTS = listOf("s0", "s1", "s2", "s3", "s4", "airplane", "satellite")
 
     fun getIconChoices(context: Context): Map<String, String> =
         (Settings.Global.getString(context.contentResolver, KEY_ICONS) ?: "")
@@ -98,9 +99,11 @@ object PictogramConfig {
         context.packageManager.getResourcesForApplication(SYSTEMUI)
 
     /** Drawable names offered in the picker: SystemUI's list plus the device's extra entries. */
-    fun iconCatalog(context: Context): List<String> {
+    fun iconCatalog(context: Context, slot: String): List<String> {
         val res = systemUiResources(context)
-        return listOf("config_pictogramIcons", "config_pictogramIconsExtra").flatMap {
+        val arrays = if (slot in SIGNAL_SLOTS) listOf("config_pictogramSignalIcons")
+            else listOf("config_pictogramIcons")
+        return (arrays + "config_pictogramIconsExtra").flatMap {
             val id = res.getIdentifier(it, "array", SYSTEMUI)
             if (id != 0) res.getStringArray(id).toList() else emptyList()
         }

@@ -30,9 +30,9 @@ class PictogramSettingsFragment : SettingsBasePreferenceFragment(),
                 it.onPreferenceChangeListener = this
             }
         }
-        for (slot in PictogramConfig.ICON_SLOTS) {
+        for (slot in PictogramConfig.ICON_SLOTS + PictogramConfig.SIGNAL_SLOTS) {
             findPreference<Preference>(ICON_PREFIX + slot)?.let {
-                it.title = slot.uppercase()
+                it.title = slotTitle(slot)
                 it.setOnPreferenceClickListener { showIconPicker(slot, it) }
                 refreshIcon(slot, it)
             }
@@ -55,11 +55,19 @@ class PictogramSettingsFragment : SettingsBasePreferenceFragment(),
         pref.icon = name?.let { drawableOf(it) }
     }
 
-    private fun label(name: String) = name.removePrefix("ic_").removeSuffix("_mobiledata")
+    private fun slotTitle(slot: String): String = when (slot) {
+        "s0" -> getString(R.string.pictogram_slot_s0)
+        "s1", "s2", "s3", "s4" -> getString(R.string.pictogram_slot_level, slot.substring(1).toInt())
+        "airplane" -> getString(R.string.pictogram_slot_airplane)
+        "satellite" -> getString(R.string.pictogram_slot_satellite)
+        else -> slot.uppercase()
+    }
+
+    private fun label(name: String) = name.removePrefix("ic_").removePrefix("stat_sys_").removeSuffix("_mobiledata")
 
     private fun showIconPicker(slot: String, pref: Preference): Boolean {
         val ctx = requireContext()
-        val names = listOf<String?>(null) + PictogramConfig.iconCatalog(ctx)
+        val names = listOf<String?>(null) + PictogramConfig.iconCatalog(ctx, slot)
         val adapter = object : ArrayAdapter<String?>(ctx, 0, names) {
             override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
                 val name = getItem(position)
@@ -87,7 +95,7 @@ class PictogramSettingsFragment : SettingsBasePreferenceFragment(),
             }
         }
         AlertDialog.Builder(ctx)
-            .setTitle(getString(R.string.pictogram_icon_choose) + ": " + slot.uppercase())
+            .setTitle(getString(R.string.pictogram_icon_choose) + ": " + slotTitle(slot))
             .setAdapter(adapter) { _, which ->
                 PictogramConfig.setIconChoice(ctx, slot, names[which])
                 refreshIcon(slot, pref)

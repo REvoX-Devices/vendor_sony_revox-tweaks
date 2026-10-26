@@ -29,4 +29,9 @@
     <string name="pictogram_icons_summary">Choose which icon is shown for each network type. Applied immediately.</string>
     <string name="pictogram_icon_default">Default</string>
     <string name="pictogram_icon_choose">Choose icon</string>
+    <string name="pictogram_signal_category">Signal and other icons</string>
+    <string name="pictogram_slot_s0">No signal</string>
+    <string name="pictogram_slot_level">Signal level %d</string>
+    <string name="pictogram_slot_airplane">Airplane mode</string>
+    <string name="pictogram_slot_satellite">Satellite</string>
 </resources>

@@ -28,4 +28,9 @@
     <string name="pictogram_icons_summary">通信種別ごとに表示するアイコンを選びます。すぐに反映されます。</string>
     <string name="pictogram_icon_default">標準</string>
     <string name="pictogram_icon_choose">アイコンを選択</string>
+    <string name="pictogram_signal_category">電波などのアイコン</string>
+    <string name="pictogram_slot_s0">圏外</string>
+    <string name="pictogram_slot_level">電波レベル %d</string>
+    <string name="pictogram_slot_airplane">機内モード</string>
+    <string name="pictogram_slot_satellite">衛星</string>
 </resources>

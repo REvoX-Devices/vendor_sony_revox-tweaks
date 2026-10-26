@@ -67,4 +67,28 @@
             android:key="pictogram_icon_5g+"
             android:persistent="false"/>
     </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pictogram_signal_category">
+        <Preference
+            android:key="pictogram_icon_s0"
+            android:persistent="false"/>
+        <Preference
+            android:key="pictogram_icon_s1"
+            android:persistent="false"/>
+        <Preference
+            android:key="pictogram_icon_s2"
+            android:persistent="false"/>
+        <Preference
+            android:key="pictogram_icon_s3"
+            android:persistent="false"/>
+        <Preference
+            android:key="pictogram_icon_s4"
+            android:persistent="false"/>
+        <Preference
+            android:key="pictogram_icon_airplane"
+            android:persistent="false"/>
+        <Preference
+            android:key="pictogram_icon_satellite"
+            android:persistent="false"/>
+    </PreferenceCategory>
 </PreferenceScreen>
