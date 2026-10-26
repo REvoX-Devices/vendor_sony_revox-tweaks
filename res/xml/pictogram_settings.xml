@@ -40,4 +40,31 @@
             app:useSimpleSummaryProvider="true"
             android:iconSpaceReserved="false"/>
     </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/pictogram_icons_category">
+        <Preference
+            android:key="pictogram_icon_3g"
+            android:persistent="false"/>
+        <Preference
+            android:key="pictogram_icon_3g+"
+            android:persistent="false"/>
+        <Preference
+            android:key="pictogram_icon_4g"
+            android:persistent="false"/>
+        <Preference
+            android:key="pictogram_icon_4g+"
+            android:persistent="false"/>
+        <Preference
+            android:key="pictogram_icon_lte"
+            android:persistent="false"/>
+        <Preference
+            android:key="pictogram_icon_lte+"
+            android:persistent="false"/>
+        <Preference
+            android:key="pictogram_icon_5g"
+            android:persistent="false"/>
+        <Preference
+            android:key="pictogram_icon_5g+"
+            android:persistent="false"/>
+    </PreferenceCategory>
 </PreferenceScreen>

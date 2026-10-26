@@ -25,4 +25,8 @@
     <string name="camera_key_off">Off</string>
     <string name="camera_key_camera">Launch Camera</string>
     <string name="camera_key_photopro">Launch Photo Pro</string>
+    <string name="pictogram_icons_category">Icon for each network type</string>
+    <string name="pictogram_icons_summary">Choose which icon is shown for each network type. Applied immediately.</string>
+    <string name="pictogram_icon_default">Default</string>
+    <string name="pictogram_icon_choose">Choose icon</string>
 </resources>

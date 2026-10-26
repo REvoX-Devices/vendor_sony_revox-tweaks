@@ -72,4 +72,37 @@ object PictogramConfig {
             }
         }
     }
+
+    // ---- per-network-type icon choice, read by SystemUI (PictogramOverride) ----
+    const val KEY_ICONS = "revox_pictogram_icons"
+    const val SYSTEMUI = "com.android.systemui"
+    val ICON_SLOTS = listOf("3g", "3g+", "4g", "4g+", "lte", "lte+", "5g", "5g+")
+
+    fun getIconChoices(context: Context): Map<String, String> =
+        (Settings.Global.getString(context.contentResolver, KEY_ICONS) ?: "")
+            .split(';').mapNotNull {
+                val kv = it.split('=', limit = 2)
+                if (kv.size == 2 && kv[1].isNotEmpty()) kv[0] to kv[1] else null
+            }.toMap()
+
+    /** [name] null restores the default icon for [slot]. */
+    fun setIconChoice(context: Context, slot: String, name: String?) {
+        val map = getIconChoices(context).toMutableMap()
+        if (name == null) map.remove(slot) else map[slot] = name
+        Settings.Global.putString(context.contentResolver, KEY_ICONS,
+            map.entries.joinToString(";") { "${it.key}=${it.value}" })
+    }
+
+    /** SystemUI's resources, so that the picker shows exactly what the status bar will draw. */
+    fun systemUiResources(context: Context) =
+        context.packageManager.getResourcesForApplication(SYSTEMUI)
+
+    /** Drawable names offered in the picker: SystemUI's list plus the device's extra entries. */
+    fun iconCatalog(context: Context): List<String> {
+        val res = systemUiResources(context)
+        return listOf("config_pictogramIcons", "config_pictogramIconsExtra").flatMap {
+            val id = res.getIdentifier(it, "array", SYSTEMUI)
+            if (id != 0) res.getStringArray(id).toList() else emptyList()
+        }
+    }
 }

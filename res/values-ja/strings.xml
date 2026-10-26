@@ -24,4 +24,8 @@
     <string name="camera_key_off">オフ</string>
     <string name="camera_key_camera">オン (カメラ)</string>
     <string name="camera_key_photopro">オン (Photo Pro)</string>
+    <string name="pictogram_icons_category">通信種別ごとのアイコン</string>
+    <string name="pictogram_icons_summary">通信種別ごとに表示するアイコンを選びます。すぐに反映されます。</string>
+    <string name="pictogram_icon_default">標準</string>
+    <string name="pictogram_icon_choose">アイコンを選択</string>
 </resources>
