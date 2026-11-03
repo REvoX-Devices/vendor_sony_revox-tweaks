@@ -14,6 +14,8 @@
     <string name="pictogram_4g_for_3g_summary">Label HSPA+ connections as 4G</string>
     <string name="pictogram_hide_lte_plus_title">Show LTE instead of LTE+</string>
     <string name="pictogram_hide_lte_plus_summary">Hide the plus sign when carrier aggregation is used</string>
+    <string name="pictogram_show_activity_title">Data activity arrows</string>
+    <string name="pictogram_show_activity_summary">Show the up and down arrows while data is sent or received</string>
     <string name="pictogram_5g_title">5G label</string>
     <string name="pictogram_5g_default">5G (default)</string>
     <string name="pictogram_5g_mmwave">5G+ for mmWave</string>

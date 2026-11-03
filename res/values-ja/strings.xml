@@ -13,6 +13,8 @@
     <string name="pictogram_4g_for_3g_summary">HSPA+ 接続を 4G と表示します</string>
     <string name="pictogram_hide_lte_plus_title">LTE+ を LTE と表示</string>
     <string name="pictogram_hide_lte_plus_summary">キャリアアグリゲーション時の「+」を表示しません</string>
+    <string name="pictogram_show_activity_title">通信の矢印 (↑↓)</string>
+    <string name="pictogram_show_activity_summary">データの送受信中に上下の矢印を表示します</string>
     <string name="pictogram_5g_title">5G の表示</string>
     <string name="pictogram_5g_default">5G (標準)</string>
     <string name="pictogram_5g_mmwave">ミリ波のみ 5G+</string>

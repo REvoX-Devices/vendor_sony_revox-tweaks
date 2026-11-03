@@ -30,6 +30,13 @@
             android:persistent="false"
             android:iconSpaceReserved="false"/>
 
+        <SwitchPreferenceCompat
+            android:key="pictogram_show_activity"
+            android:title="@string/pictogram_show_activity_title"
+            android:summary="@string/pictogram_show_activity_summary"
+            android:persistent="false"
+            android:iconSpaceReserved="false"/>
+
         <ListPreference
             android:key="pictogram_5g_style"
             android:title="@string/pictogram_5g_title"

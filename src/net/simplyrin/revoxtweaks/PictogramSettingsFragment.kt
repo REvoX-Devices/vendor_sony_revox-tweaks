@@ -30,6 +30,10 @@ class PictogramSettingsFragment : SettingsBasePreferenceFragment(),
                 it.onPreferenceChangeListener = this
             }
         }
+        findPreference<SwitchPreferenceCompat>(KEY_SHOW_ACTIVITY)?.let {
+            it.isChecked = PictogramConfig.showActivity(ctx)
+            it.onPreferenceChangeListener = this
+        }
         for (slot in PictogramConfig.ICON_SLOTS + PictogramConfig.SIGNAL_SLOTS) {
             findPreference<Preference>(ICON_PREFIX + slot)?.let {
                 it.title = slotTitle(slot)
@@ -113,6 +117,12 @@ class PictogramSettingsFragment : SettingsBasePreferenceFragment(),
     override fun onPreferenceChange(preference: Preference, newValue: Any): Boolean {
         val ctx = requireContext()
         val settingKey = SWITCHES[preference.key]
+        if (preference.key == KEY_SHOW_ACTIVITY) {
+            // SystemUI observes this setting; no carrier config change is needed.
+            PictogramConfig.putInt(ctx, PictogramConfig.KEY_SHOW_ACTIVITY,
+                if (newValue as Boolean) 1 else 0)
+            return true
+        }
         if (settingKey != null) {
             PictogramConfig.putInt(ctx, settingKey, if (newValue as Boolean) 1 else 0)
         } else if (preference.key == KEY_5G) {
@@ -127,6 +137,7 @@ class PictogramSettingsFragment : SettingsBasePreferenceFragment(),
     companion object {
         private const val ICON_PREFIX = "pictogram_icon_"
         private const val KEY_5G = "pictogram_5g_style"
+        private const val KEY_SHOW_ACTIVITY = "pictogram_show_activity"
         private val SWITCHES = mapOf(
             "pictogram_4g_for_lte" to PictogramConfig.KEY_4G_FOR_LTE,
             "pictogram_4g_for_3g" to PictogramConfig.KEY_4G_FOR_3G,

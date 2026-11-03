@@ -22,6 +22,9 @@ object PictogramConfig {
     const val KEY_HIDE_LTE_PLUS = "xperia_pictogram_hide_lte_plus"
     const val KEY_5G_STYLE = "xperia_pictogram_5g_style"
 
+    /** Read by SystemUI (ConnectivityConstants); unset means SystemUI's config_showActivity. */
+    const val KEY_SHOW_ACTIVITY = "revox_show_activity"
+
     private const val NR_TAIL = ",connected_rrc_idle:5G,not_restricted_rrc_idle:5G," +
         "not_restricted_rrc_con:5G"
     private const val NR_TAIL_PLUS = ",connected_rrc_idle:5G_Plus,not_restricted_rrc_idle:5G_Plus," +
@@ -29,6 +32,14 @@ object PictogramConfig {
 
     fun getInt(context: Context, key: String): Int =
         Settings.Global.getInt(context.contentResolver, key, 0)
+
+    fun showActivity(context: Context): Boolean {
+        val res = systemUiResources(context)
+        val id = res.getIdentifier("config_showActivity", "bool", SYSTEMUI)
+        val default = id != 0 && res.getBoolean(id)
+        return Settings.Global.getInt(context.contentResolver, KEY_SHOW_ACTIVITY,
+            if (default) 1 else 0) == 1
+    }
 
     fun putInt(context: Context, key: String, value: Int) {
         Settings.Global.putInt(context.contentResolver, key, value)
